@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import * as z from "zod"
 
 import { Lock } from "lucide-react"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "components/ui/card"
 
 import { IFormFields } from "utils/interface";
 import CustomForm from "@/components/CustomForm";
@@ -35,7 +35,7 @@ const Login = () => {
       localStorage.setItem('name', response?.data?.firstName);
       Toast({ message: "Login Successful", type: "success" });
       navigate('/');
-    } catch (error:any) {
+    } catch (error: any) {
       Toast({ message: error.response.data.message, type: "error" })
     } finally {
       setLoading(false);
